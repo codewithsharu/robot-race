@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Race 2025</title>
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/portfolio.css">
+    <link rel="stylesheet" href="style/services.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/stacking.css">
+    <link rel="stylesheet" href="style/timeline.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        color: white;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: black;
+        min-height: 100vh;
+    }
+
+    .hero-section {
+        background-image: url("https://cdn.prod.website-files.com/67003b3d2939b428be3178b9/671a935fb8f09e15c852eb4f_Landing%20page%20(1).png");
+        background-position: 50% 0;
+        background-repeat: repeat-x;
+        background-size: cover;
+        flex-flow: column;
+        justify-content: space-between;
+        width: 100vw;
+        height: 85vh;
+        padding-top: 1rem;
+        padding-bottom: 4rem;
+        display: flex;
+        position: relative;
+    }
+
+    .services-grid .cs_card {
+        border: 1px solid #512f6c;
+    }
+
+    .cs_card:hover {
+        border: 1px solid #aa40fa;
+    }
+
+    .navbar-logo img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    @keyframes glowEffect {
+        0% {
+            filter: drop-shadow(0 0 5px black);
+        }
+
+        50% {
+            filter: drop-shadow(0 0 3px pink);
+        }
+
+        100% {
+            filter: drop-shadow(0 0 5px black);
+        }
+    }
+
+    .glow-image {
+        animation: glowEffect 3s ease-in-out infinite;
+    }
+
+    @media (max-width: 600px) {
+        .hero-text.intro {
+            display: none;
+        }
+
+        .hero-text.intro.mobile {
+            display: block;
+            margin-bottom: 0;
+        }
+        
+        .hero-bottom-images img {
+            max-height: 60px !important;
+            width: auto;
+        }
+        
+        .hero-bottom-images {
+            bottom: -30px !important;
+        }
+    }
+
+    @media (min-width: 601px) {
+        .hero-text.intro.mobile {
+            display: none;
+        }
+    }
+
+    .hero-bottom-images {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .hero-bottom-images img {
+        max-height: 200px;
+        width: auto;
+    }
+
+    .hero-bottom-images {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .left-hero-img {
+        animation: floatLeft 3s ease-in-out infinite;
+    }
+
+    .right-hero-img {
+        animation: floatRight 3s ease-in-out infinite;
+    }
+
+    @keyframes floatLeft {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        50% {
+            transform: translateX(-15px) translateY(-15px);
+        }
+        100% {
+            transform: translateX(0) translateY(0);
+        }
+    }
+
+    @keyframes floatRight {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        50% {
+            transform: translateX(15px) translateY(-15px);
+        }
+        100% {
+            transform: translateX(0) translateY(0);
+        }
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        z-index: 9999;
+    }
+</style>
+
+<body>
+
+    <div class="loader" id="loader">Loading... 0%</div>
+
+    <div class="container hero-section" style="display: none;">
+        <header style="display: flex; justify-content: center; align-items: center; ">
+            <div class="navbar">
+                <div class="navbar-logo">
+                    <img style="width: 150px; height: auto; border-radius: 7px;" src="assets/icons/aitamT.jpg"
+                        alt="Nclox Logo">
+                </div>
+                <div class="navbar-menu">
+                    <a href="#home" style="color: #aa40fa;" class="nav-link">Home</a>
+                    <a href="#clients" class="nav-link">About</a>
+                    <a href="#portfolio" class="nav-link">Timeline</a>
+                    <a href="#hiw" class="nav-link">Rules?</a>
+                    <a href="#faqs" class="nav-link">Contact</a>
+                </div>
+                <button class="navbar-button" onclick="window.location.href='/form.html'">REGISTER</button>
+                <div class="hamburger">☰</div>
+            </div>
+        </header>
+
+        <!-- hero section -->
+        <div class="hero fade-in"
+            style="display: flex; flex-direction: column;  align-items: center; text-align: center;  padding: 0 20px;">
+            <div
+                style=" box-shadow: 0 0 7.8px #20105b; background-color: black; border: 1px solid white; height: auto; width: fit-content; max-width: 400px; border-radius: 45px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; box-sizing: border-box; margin-top: 2rem;">
+                <p class="founders-text" style="margin: 0;"> Organized by AITAM</p>
+            </div>
+
+
+            <img class="glow-image"
+                src="https://see.fontimg.com/api/rf5/ZVnjx/NGZmNWU4Y2U0MDMxNDEyNWJlZGNhOGQ3ODVkMGFmODcudHRm/QUlUQU0gVEVDSA/plaguard.png?r=fs&h=73&w=1125&fg=FFFFFF&bg=040404&tb=1&s=65"
+                alt="ROBOT RACE 2025 BUILT BEYOND LIMITS"
+                style="display: block; margin: 2rem auto; max-width: 100%; height: auto;">
+            <img class="glow-image"
+                src="https://see.fontimg.com/api/rf5/ZVnjx/NGZmNWU4Y2U0MDMxNDEyNWJlZGNhOGQ3ODVkMGFmODcudHRm/Uk9CT1QgUkFDRSAyMDI1/plaguard.png?r=fs&h=73&w=1125&fg=FFFFFF&bg=040404&tb=1&s=65"
+                alt="ROBOT RACE 2025 BUILT BEYOND LIMITS"
+                style="display: block; margin: 2rem auto; max-width: 100%; height: auto;">
+            <p style="text-align: center; padding: 0 20px; max-width: 800px; margin: 0 auto; font-weight: 500; font-size: 1.3rem; font-family: 'Roboto', sans-serif;"
+                class="hero-text intro">
+                AITAM Tech Robot Race 2025 is an exciting robotics competition that challenges participants
+                to design, build, and race their manually controlled robots. The event tests the speed, agility,
+                and stability of robots as they navigate a dynamic obstacle-filled track. It is an excellent
+                opportunity for students to showcase their technical skills, problem-solving abilities, and
+                teamwork in a highly competitive environment.</p>
+            <p style="text-align: center; padding: 0 20px; max-width: 800px; margin: 0 auto; font-weight: 500; font-size: 1.1rem; font-family: 'Roboto', sans-serif;"
+                class="hero-text intro mobile">
+                AITAM Tech Robot Race 2025 is an exciting robotics competition that challenges participants
+                to design, build, and race their robots. The event tests the speed, agility, and stability of robots
+                as they navigate a dynamic track. It is an excellent opportunity for students to showcase their
+                technical skills, problem-solving abilities, and teamwork.</p>
+
+          
+        </div>
+ 
+
+        <div class="hero-bottom-images">
+            <img src="assets/icons/lefthero.png" alt="Left Hero Image" class="left-hero-img">
+            <img src="assets/icons/righthero.png" alt="Right Hero Image" class="right-hero-img">
+        </div>
+
+     
+
+    </div>
+
+    <div class="cta" style="z-index: 9999; display: flex; justify-content: center; align-items: center; ">
+        <a href="/form.html" style="text-decoration: none;">
+            <button  
+                style="background: #aa40fa; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 20px;">REGISTER - ></button>
+        </a>
+    </div>
+
+    <!-- second section -->
+    <center style="background-image: radial-gradient(circle, #000000, #0d0d0d, #000000, #0d0d0d, #000000, #000000, #000000, #000000, #0d0d0d, #000000, #0d0d0d, #000000);">
+        <h2 style="margin-top: 6rem; " class="heading-main fade-in">O B J E C T I V E S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/objectives.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="line-height: 1.8; color: #fff; text-align: center; font-size: 1.1rem; margin: 0 0 2rem 0;">
+                    <span style="color: #aa40fa;">[MISSION DIRECTIVE]:</span>
+                    The primary goal of the competition is to build a high-performance racing robot that can successfully complete the course in the shortest possible time while overcoming various obstacles. Teams must ensure their robots adhere to the given specifications and demonstrate precision, speed, and balance throughout the race.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="heading-main fade-in">T A S K S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/tasks.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">⚡</span> Only robots built as per the given specifications will be allowed to participate.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">⚡</span> The competition rounds will be determined based on the number of participating teams.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">⚡</span> The robot that scores the maximum points will be declared the winner.</p>
+            </div>
+        </div>
+
+        <h2 class="heading-main fade-in">G E N E R A L &nbsp; R U L E S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/rules.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/1.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> This is a racing event, so the fastest and most balanced robot will win.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/2.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> A team can consist of a maximum of 4 members and a minimum of 2 members.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/3.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Robots must comply with the given specifications; any deviation will result in disqualification.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/4.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Hand touches: Each team is allowed three hand touches during the race. After a hand touch, the robot must restart from the last checkpoint.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/5.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> No charging terminals will be provided at the venue; teams must bring charged batteries.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/6.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> The arena layout may be modified before any round begins.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/7.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> If a robot goes off track, it will be placed back at the previous checkpoint crossed.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/8.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Judges' decisions are final and binding; arguments with judges may lead to disqualification.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/9.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span>The robot must not damage the arena.</p>
+            </div>
+        </div>
+
+        <h2 class="heading-main fade-in">R O B O T &nbsp; S P E C I F I C A T I O N S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/robot.png" alt="Robot Specifications Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Readymade toy cars are not allowed.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> The maximum dimensions: 250 mm x 250 mm x 250 mm (L x B x H).</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Maximum weight: 3 kg (with a 10% tolerance allowed).</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Power source must be onboard (mounted on the robot).</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Wireless robots are only allowed.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> If using an RF wireless controller, it must have dual frequency to prevent signal interference.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> The wired controller's cable must be at least 15 meters long and should remain slack during the race.</p>
+                <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> The maximum voltage allowed for powering the robot is 24V.</p>
+            </div>
+        </div>
+       
+        <h2 class="heading-main fade-in">A R E N A &nbsp; S P E C I F I C A T I O N S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/arena.png" alt="Arena Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🏁</span> Track width: Minimum 30 cm, Maximum 60 cm.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🏁</span> The track surface may be uneven.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🏁</span> The arena may have abrupt angles (not exceeding 30°).</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🏁</span> The track will include obstacles such as:</p>
+                <ul style="margin: 1rem 0; padding-left: 20px;">
+                    <li>Switch gates</li>
+                    <li>Speed breakers</li>
+                    <li>Marble pit</li>
+                    <li>Rotating disk</li>
+                    <li>Seesaw</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="heading-main fade-in">G A M E P L A Y &nbsp; R U L E S</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+            <img src="assets/robotimg/rules (2).png" alt="Gameplay Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
+            <div style="text-align: left; padding: 0 20px; flex: 1;">
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> If a robot falls from the bridge, it will be placed back at the previous checkpoint, with a penalty.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> Open to all regular students with a valid student ID from their respective educational institutes.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> If a robot is damaged or dismantled during the race, the participant will get one timeout (with a penalty) to repair it. The next participant will play during this time.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> Only one timeout is allowed per participant, and repairs must be done without mentor assistance.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> Each participant gets 5 minutes of arena time.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> Maximum 3 attempts are allowed within these 5 minutes.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> The better score from two successful attempts will be considered.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> If the total race time exceeds 8 minutes, the participant will be disqualified.</p>
+                <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> No adjustments to the robot are allowed once the race begins.</p>
+            </div>
+        </div>
+
+    <h2 class="heading-main fade-in">E L I G I B I L I T Y</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <p style="margin: 1rem 0; text-align: left; padding: 0 20px; flex: 1;">Open to all regular students with a valid student ID from their respective educational institutes.</p>
+    </div>
+
+    <h2 class="heading-main fade-in">P E R K S</h2>
+    <div class="perks-container fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 2.5rem; border-radius: 20px; font-family: 'Courier New', monospace; position: relative; overflow: hidden;">
+        <div style="display: flex; justify-content: center; align-items: flex-end; width: 100%; gap: 2rem; flex-wrap: wrap;">
+            <div class="perk" style="display: flex; flex-direction: column; align-items: center; width: 200px; margin: 1.5rem; padding: 1.5rem; background: rgba(74, 20, 140, 0.1); border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(74, 20, 140, 0.3);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 20px rgba(192, 192, 192, 0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="assets/robotimg/silver.png" alt="Second Prize" style="width: 100%; max-width: 100px; height: auto; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.8));">
+                <p style="text-align: center; color: #e0e0e0; font-size: 1.2rem; font-weight: bold; margin: 10px 0; text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);">Second Prize</p>
+                <p class="heading-main" style="font-size: 1.4rem; font-weight: bold; color:silver; border: 1px solid silver; padding: 10px; border-radius: 10px; text-shadow: 0 0 15px rgba(192, 192, 192, 0.8); animation: silverShine 2s infinite;">₹5,000</p>
+            </div>
+            <div class="perk" style="display: flex; flex-direction: column; align-items: center; width: 200px; margin: 1.5rem; padding: 2rem; background: rgba(74, 20, 140, 0.15); border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(74, 20, 140, 0.5);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 25px rgba(255, 215, 0, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="assets/robotimg/gold.png" alt="First Prize" style="width: 100%; max-width: 140px; height: auto; margin-bottom: 15px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));">
+                <p style="text-align: center; color: #ffd700; font-size: 1.5rem; font-weight: bold; margin: 10px 0; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">First Prize</p>
+                <p class="heading-main" style="font-size: 1.9rem; font-weight: bold; color: #FFD700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); border: 1px solid #FFD700; padding: 10px; border-radius: 10px; animation: goldShine 2s infinite;">₹8,000</p>
+            </div>
+            <div class="perk" style="display: flex; flex-direction: column; align-items: center; width: 200px; margin: 1.5rem; padding: 1.5rem; background: rgba(74, 20, 140, 0.1); border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; border: 1px solid rgba(74, 20, 140, 0.3);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 20px rgba(205, 127, 50, 0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                <img src="assets/robotimg/bronze.png" alt="Best Innovative Design" style="width: 100%; max-width: 100px; height: auto; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(205, 127, 50, 0.8));">
+                <p style="text-align: center; color: #cd7f32; font-size: 1.2rem; font-weight: bold; margin: 10px 0; text-shadow: 0 0 10px rgba(205, 127, 50, 0.5);">Best Innovative Design</p>
+                <p class="heading-main" style="font-size: 1.4rem; font-weight: bold; border: 1px solid #CD7F32; padding: 10px; border-radius: 10px; color: #CD7F32; text-shadow: 0 0 15px rgba(205, 127, 50, 0.8); animation: bronzeShine 2s infinite;">₹2,000</p>
+            </div>
+        </div>
+        <p style="margin: 2rem 0 0 0; text-align: center; width: 100%; color: #4caf50; font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 15px rgba(76, 175, 80, 0.7); background-color: rgba(74, 20, 140, 0.2); padding: 10px; border-radius: 10px;">Certificate of Participation for all those who successfully participated</p>
+    </div>
+
+    <h2 class="heading-main fade-in">C O N T A C T</h2>
+    <div class="contact-container fade-in">
+        <div class="contact-details">
+            <p><span class="contact-icon">📞</span> P. Ashok, <strong class="role">Technical Mentor</strong><br>Faculty Coordinator Robot Race 2025<br><strong class="phone-number">+91 6304881946</strong></p>
+            <p><span class="contact-icon">📞</span> V. Govardhan, III ECE<br><strong class="role">Student Coordinator</strong><br><strong class="phone-number">+91 7569106186</strong></p>
+            <p><span class="contact-icon">📞</span> K. Durga Prasad, III ECE<br><strong class="role">Student Coordinator</strong><br><strong class="phone-number">+91 837467622</strong></p>
+        </div>
+    </div>
+
+    <style>
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            width: calc(100% - 2rem);
+            margin: 2rem 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid #512f6c;
+            box-shadow: 0 0 7.8px #20105b;
+            font-family: 'Courier New', monospace;
+        }
+
+        .contact-details {
+            text-align: left;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .contact-icon {
+            color: #aa40fa;
+        }
+
+        .contact-details p {
+            margin: 1rem 0;
+        }
+
+        .role {
+            color: #ffeb3b;
+        }
+
+        .phone-number {
+            color: #4caf50;
+        }
+    </style>
+    </center>
+
+    <footer style="background-color: black; color: white; text-align: center; padding: 1rem 0; position: relative;">
+        <p style="margin: 0;">Designed & Developed by Shareen @ Developers Club</p>
+    </footer>
+
+    <script>
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navbarMenu = document.querySelector('.navbar-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+            hamburger.innerHTML = navbarMenu.classList.contains('active') ? '×' : '☰';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarMenu.classList.remove('active');
+                hamburger.innerHTML = '☰';
+            });
+        });
+
+        // Loader script
+        let loader = document.getElementById('loader');
+        let container = document.querySelector('.container');
+        let percentage = 0;
+
+        function updateLoader() {
+            percentage += 1;
+            loader.innerHTML = `Loading... ${percentage}%`;
+            if (percentage >= 100) {
+                clearInterval(loaderInterval);
+                loader.style.display = 'none';
+                container.style.display = 'block';
+            }
+        }
+
+        let loaderInterval = setInterval(updateLoader, 30);
+    </script>
+
+
+</body>
+
+</html>
