@@ -114,6 +114,60 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    /* Payment Section Styles */
+    .payment-wrapper {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .payment-steps {
+      text-align: left;
+      margin: 2rem 0;
+      padding: 0 1rem;
+    }
+    .payment-step {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(170, 64, 250, 0.1);
+      border-radius: 8px;
+      border-left: 4px solid #aa40fa;
+    }
+    .payment-step h3 {
+      color: #aa40fa;
+      margin: 0 0 0.5rem 0;
+    }
+    .payment-wrapper img {
+      max-width: 300px;
+      margin: 1.5rem auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(170, 64, 250, 0.3);
+    }
+    .payment-info {
+      background: rgba(170, 64, 250, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
   </style>
 
   <button class="back-button" onclick="window.history.back()">← Back</button>
@@ -124,6 +178,7 @@
   </div>
 
   <div class="form-wrapper" style="margin-top: 3em;">
+    <h2 style="text-align: center; color: #aa40fa;">Register and Complete Payment</h2>
     <div class="form-container custom-form-container">
       <form class="form" id="submit-to-google-sheet">
         <div class="form-group">
@@ -203,25 +258,83 @@
     </div>
   </div>
 
+  <!-- Payment Section -->
+  <div class="payment-wrapper">
+    <h2>Payment Instructions</h2>
+    
+    
+
+    <div class="payment-steps">
+      <div class="payment-step">
+        <h3>Step 1: Fill Registration Details</h3>
+        <p>Complete the registration form above with all team members' information</p>
+      </div>
+      
+      <div class="payment-step">
+        <h3>Step 2: Make Payment</h3>
+        <p>Scan the QR code below to make the payment</p>
+        <img src="qr.jpg" alt="Payment QR Code">
+      </div>
+
+      <div class="payment-step">
+        <h3>Step 3: Send Payment Confirmation</h3>
+        <p>Send the following details on WhatsApp:</p>
+        <div class="payment-info">
+          • Team Name: <span id="display-team-name">(As filled in form)</span><br>
+          • Team Leader: <span id="display-leader-name">(As filled in form)</span><br>
+          • Payment Screenshot<br>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/917569106186" class="whatsapp-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.153 23.486l4.452-2.131A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.484 0-4.788-.809-6.641-2.175l-4.639 2.277 2.184-4.644A9.95 9.95 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/>
+      </svg>
+      Click here to send payment details on WhatsApp
+    </a>
+  
+     <br>
+     <br>
+
+    <div style="background: rgba(170, 64, 250, 0.1); border: 1px solid #aa40fa; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center;">
+      <p style="color: #aa40fa; font-weight: bold; margin: 0;">
+        Need help? Contact our support: <span style="color: white;">+91 7569106186</span>
+      </p>
+    </div>
+  </div>
+
   <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbyz6fu25LNjyz4nu_ClNx0YHEzsWZivid4INmObSiZDPatXZEYir-c1Ju3Co8Izvy7ncA/exec";
     const form = document.forms["submit-to-google-sheet"];
     const loaderContainer = document.getElementById("loader-container");
 
+    // Add event listeners to update payment info section
+    document.getElementById('team-name').addEventListener('input', function(e) {
+      document.getElementById('display-team-name').textContent = e.target.value || "(As filled in form)";
+    });
+
+    document.getElementById('leader-name').addEventListener('input', function(e) {
+      document.getElementById('display-leader-name').textContent = e.target.value || "(As filled in form)";
+    });
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      loaderContainer.style.display = "flex"; // Show loader with flex display
+      loaderContainer.style.display = "flex";
 
       var formData = new FormData(form);
 
       fetch(scriptURL, { method: "POST", body: formData })
         .then((response) => {
-          loaderContainer.style.display = "none"; // Hide loader
+          loaderContainer.style.display = "none";
           swal("Done", "Submitted Successfully.", "success");
-          form.reset(); // Clear the form after successful submission
+          form.reset();
+          // Reset display values after form submission
+          document.getElementById('display-team-name').textContent = "(As filled in form)";
+          document.getElementById('display-leader-name').textContent = "(As filled in form)";
         })
         .catch((error) => {
-          loaderContainer.style.display = "none"; // Hide loader
+          loaderContainer.style.display = "none";
           swal("Error", "Something went wrong. please try again!", "error");
         });
     });

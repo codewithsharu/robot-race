@@ -39,7 +39,7 @@
     }
 
     .services-grid .cs_card {
-        border: 1px solid #512f6c;
+        border: 1px solid #682e97;
     }
 
     .cs_card:hover {
@@ -175,7 +175,6 @@
 </style>
 
 <body>
-
     <div class="loader" id="loader">Loading... 0%</div>
 
     <div class="container hero-section" style="display: none;">
@@ -224,22 +223,25 @@
                 and stability of robots as they navigate a dynamic obstacle-filled track. It is an excellent
                 opportunity for students to showcase their technical skills, problem-solving abilities, and
                 teamwork in a highly competitive environment.</p>
-            <p style="text-align: center; padding: 0 20px; max-width: 800px; margin: 0 auto; font-weight: 500; font-size: 1.1rem; font-family: 'Roboto', sans-serif;"
+            <p style="text-align: center; padding: 0 20px; max-width: 800px; margin: 0 auto; font-weight: 500; font-size: 1.1rem; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;"
                 class="hero-text intro mobile">
                 AITAM Tech Robot Race 2025 is an exciting robotics competition that challenges participants
                 to design, build, and race their robots. The event tests the speed, agility, and stability of robots
                 as they navigate a dynamic track. It is an excellent opportunity for students to showcase their
                 technical skills, problem-solving abilities, and teamwork.</p>
 
-          
         </div>
  
 
         <div class="hero-bottom-images">
-            <img src="assets/icons/lefthero.png" alt="Left Hero Image" class="left-hero-img">
-            <img src="assets/icons/righthero.png" alt="Right Hero Image" class="right-hero-img">
+            <img src="assets/hero/lefthero.png" alt="Left Hero Image" class="left-hero-img">
+            <img src="assets/hero/righthero.png" alt="Right Hero Image" class="right-hero-img">
         </div>
 
+        <div class="hero-bottom-images" style="top: 6em;">
+            <img src="assets/hero/herotl.png" alt="Left Hero Image" class="left-hero-img">
+            <img src="assets/hero/herotr.png" alt="Right Hero Image" class="right-hero-img">
+        </div>
      
 
     </div>
@@ -251,10 +253,15 @@
         </a>
     </div>
 
+    <div id="stars"></div>
+  
+
     <!-- second section -->
     <center style="background-image: radial-gradient(circle, #000000, #0d0d0d, #000000, #0d0d0d, #000000, #000000, #000000, #000000, #0d0d0d, #000000, #0d0d0d, #000000);">
+       
+        <!-- <canvas id=c> </canvas> -->
         <h2 style="margin-top: 6rem; " class="heading-main fade-in">O B J E C T I V E S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/objectives.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="line-height: 1.8; color: #fff; text-align: center; font-size: 1.1rem; margin: 0 0 2rem 0;">
@@ -265,7 +272,7 @@
         </div>
 
         <h2 class="heading-main fade-in">T A S K S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/tasks.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="margin: 1rem 0;"><span style="color: #aa40fa;">⚡</span> Only robots built as per the given specifications will be allowed to participate.</p>
@@ -274,8 +281,10 @@
             </div>
         </div>
 
+
+        
         <h2 class="heading-main fade-in">G E N E R A L &nbsp; R U L E S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/rules.png" alt="Robot Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/numbers/1.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> This is a racing event, so the fastest and most balanced robot will win.</p>
@@ -290,8 +299,11 @@
             </div>
         </div>
 
+    
+        
+
         <h2 class="heading-main fade-in">R O B O T &nbsp; S P E C I F I C A T I O N S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/robot.png" alt="Robot Specifications Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="margin: 1rem 0; display: flex; align-items: center;"><span style="color: #aa40fa;"><img src="assets/icons/setting.png" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;"></span> Readymade toy cars are not allowed.</p>
@@ -306,7 +318,7 @@
         </div>
        
         <h2 class="heading-main fade-in">A R E N A &nbsp; S P E C I F I C A T I O N S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/arena.png" alt="Arena Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🏁</span> Track width: Minimum 30 cm, Maximum 60 cm.</p>
@@ -324,7 +336,7 @@
         </div>
 
         <h2 class="heading-main fade-in">G A M E P L A Y &nbsp; R U L E S</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
             <img src="assets/robotimg/rules (2).png" alt="Gameplay Image" style="width: 100%; max-width: 200px; height: auto; margin: 0 0 20px 0;">
             <div style="text-align: left; padding: 0 20px; flex: 1;">
                 <p style="margin: 1rem 0;"><span style="color: #aa40fa;">🎮</span> If a robot falls from the bridge, it will be placed back at the previous checkpoint, with a penalty.</p>
@@ -339,8 +351,13 @@
             </div>
         </div>
 
+       
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+
     <h2 class="heading-main fade-in">E L I G I B I L I T Y</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #512f6c; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 800px; width: calc(100% - 2rem); margin: 2rem 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid #682e97; box-shadow: 0 0 7.8px #20105b; font-family: 'Courier New', monospace;" class="fade-in">
         <p style="margin: 1rem 0; text-align: left; padding: 0 20px; flex: 1;">Open to all regular students with a valid student ID from their respective educational institutes.</p>
     </div>
 
@@ -376,6 +393,12 @@
     </div>
 
     <style>
+        canvas {
+
+position: absolute;
+
+}
+
         .contact-container {
             display: flex;
             flex-wrap: wrap;
@@ -387,7 +410,7 @@
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            border: 1px solid #512f6c;
+            border: 1px solid #682e97;
             box-shadow: 0 0 7.8px #20105b;
             font-family: 'Courier New', monospace;
         }
@@ -468,6 +491,135 @@
         }
 
         let loaderInterval = setInterval(updateLoader, 30);
+
+
+        var w = c.width = window.innerWidth,
+    h = c.height = window.innerHeight,
+    ctx = c.getContext('2d'),
+
+    opts = {
+        len: 60,
+        count: 20,
+        baseTime: 10,
+        addedTime: 10,
+        dieChance: .05,
+        spawnChance: 1,
+        sparkChance: .1,
+        sparkDist: 10,
+        sparkSize: 2,
+
+        color: 'hsl(hue,100%,light%)',
+        baseLight: 50,
+        addedLight: 10, // [50-10,50+10]
+        shadowToTimePropMult: 6,
+        baseLightInputMultiplier: .01,
+        addedLightInputMultiplier: .02,
+
+        cx: w / 2,
+        cy: h / 2,
+        repaintAlpha: .04,
+        hueChange: .1
+    },
+
+    tick = 0,
+    lines = [],
+    dieX = w / 2 / opts.len,
+    dieY = h / 2 / opts.len;
+
+ctx.fillStyle = 'black';
+ctx.fillRect(0, 0, w, h);
+
+function loop() {
+    window.requestAnimationFrame(loop);
+    ++tick;
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = `rgba(0,0,0,${opts.repaintAlpha})`;
+    ctx.fillRect(0, 0, w, h);
+    ctx.globalCompositeOperation = 'lighter';
+
+    if (lines.length < opts.count && Math.random() < opts.spawnChance)
+        lines.push(new Line());
+
+    for (var i = 0; i < lines.length; i++) {
+        lines[i].step();
+    }
+}
+
+function Line() {
+    this.reset();
+}
+
+Line.prototype.reset = function () {
+    this.x = 0;
+    this.y = 0;
+    this.addedX = 0;
+    this.addedY = 0;
+
+    this.rad = 0;
+
+    this.lightInputMultiplier = opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
+    this.color = opts.color.replace('hue', tick * opts.hueChange);
+    this.cumulativeTime = 0;
+
+    this.beginPhase();
+}
+
+Line.prototype.beginPhase = function () {
+    this.x += this.addedX;
+    this.y += this.addedY;
+
+    this.time = 0;
+    this.targetTime = (opts.baseTime + opts.addedTime * Math.random()) | 0;
+
+    // Change direction by 90 degrees (0, 90, 180, 270 degrees)
+    this.rad = Math.PI / 2 * ((Math.random() * 4) | 0);
+    this.addedX = Math.cos(this.rad);
+    this.addedY = Math.sin(this.rad);
+
+    if (Math.random() < opts.dieChance || this.x > dieX || this.x < -dieX || this.y > dieY || this.y < -dieY)
+        this.reset();
+}
+
+Line.prototype.step = function () {
+    ++this.time;
+    ++this.cumulativeTime;
+
+    if (this.time >= this.targetTime)
+        this.beginPhase();
+
+    var prop = this.time / this.targetTime,
+        wave = Math.sin(prop * Math.PI / 2),
+        x = this.addedX * wave,
+        y = this.addedY * wave,
+        len = opts.len,
+        cx = opts.cx,
+        cy = opts.cy;
+
+    ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+    ctx.fillStyle = ctx.shadowColor = this.color.replace('light', opts.baseLight + opts.addedLight * Math.sin(this.cumulativeTime * this.lightInputMultiplier));
+    ctx.fillRect(cx + (this.x + x) * len, cy + (this.y + y) * len, 2, 2);
+
+    if (Math.random() < opts.sparkChance)
+        ctx.fillRect(cx + (this.x + x) * len + Math.random() * opts.sparkDist * (Math.random() < .5 ? 1 : -1) - opts.sparkSize / 2, cy + (this.y + y) * len + Math.random() * opts.sparkDist * (Math.random() < .5 ? 1 : -1) - opts.sparkSize / 2, opts.sparkSize, opts.sparkSize);
+}
+
+loop();
+
+window.addEventListener('resize', function () {
+    w = c.width = window.innerWidth;
+    h = c.height = window.innerHeight;
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, w, h);
+
+    opts.cx = w / 2;
+    opts.cy = h / 2;
+
+    dieX = w / 2 / opts.len;
+    dieY = h / 2 / opts.len;
+});
+
     </script>
 
 
